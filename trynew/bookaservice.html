@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="bookaservice.js"></script>
+    <script defer src="script.js"></script>
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="KCS Auto Repair"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="vehicles.html">Vehicles</a></li>
+                <li><a href="bookaservice.html" class="btn">Book a Service</a></li>
+                <li><a href="#" id="login-icon" class="icon">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Booking Form -->
+    <main>
+        <section class="booking-form">
+            <h1>Book a Service</h1>
+            <form id="serviceForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="vehicle-type">Vehicle Type:</label>
+                    <input type="text" id="vehicle-type" required>
+                </div>
+                <div class="form-group">
+                    <label for="plate-number">Plate Number:</label>
+                    <input type="text" id="plate-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-number">Contact Number:</label>
+                    <input type="text" id="contact-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-date">Choose Date and Time:</label>
+                    <input type="datetime-local" id="appointment-date" required>
+                </div>
+                <button type="button" id="confirm-datetime">Okay</button>
+                <br>
+
+                <div class="form-group">
+                    <br>
+                    <label for="service-selection">Select Service(s):</label>
+                    <select id="service-selection" multiple>
+                        <option value="50">Air Conditioning - $50</option>
+                        <option value="30">Car Brake - $30</option>
+                        <option value="20">Change Wheels - $20</option>
+                        <option value="25">Realignment - $25</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-notes">Customer Notes:</label>
+                    <textarea id="customer-notes" rows="5"></textarea>
+                </div>
+
+                <button type="button" id="request-appointment">Request Appointment</button>
+            </form>
+
+            <div id="appointment-summary" class="hidden">
+                <h2>Appointment Summary</h2>
+                <p id="summary-details"></p>
+                <button id="download-summary">Download Summary</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div><a href="#">Facebook Instagram Viber</a></div>
+            <div><a href="faqs.html">FAQs</a></div>
+            <div><a href="aboutus.html">About Us</a></div>
+            <div>
+                <p>Subscribe to Us</p>
+                <form>
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+        <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>
