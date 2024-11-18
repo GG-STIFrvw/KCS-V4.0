@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bookaservice.css">
+    <script defer src="bookaservice.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="KCS Auto Repair"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="vehicles.html">Vehicles</a></li>
+                <li><a href="bookaservice.html" class="btn">Book a Service</a></li>
+                <li><a href="#" id="login-icon" class="icon">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Booking Form -->
+    <main>
+        <section class="booking-form">
+            <h1>Book a Service</h1>
+            <form id="serviceForm" method="POST" action="backend/submit_appointment.php">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="vehicle-type">Vehicle Type:</label>
+            <input type="text" id="vehicle-type" name="vehicle_type" required>
+        </div>
+        <div class="form-group">
+            <label for="plate-number">Plate Number:</label>
+            <input type="text" id="plate-number" name="plate_number" required>
+        </div>
+        <div class="form-group">
+            <label for="contact-number">Contact Number:</label>
+            <input type="text" id="contact-number" name="contact_number" required>
+        </div>
+        <div class="form-group">
+            <label for="appointment-date">Choose Date and Time:</label>
+            <input type="datetime-local" id="appointment-date" name="appointment_date_time" required>
+        </div>
+        <div class="form-group">
+            <label>Services (Select at least one):</label>
+            <div>
+                <input type="checkbox" class="service" data-price="50" id="airconditioning" name="services[]" value="1">
+                <label for="airconditioning">Air Conditioning ($50)</label>
+            </div>
+            <div>
+                <input type="checkbox" class="service" data-price="30" id="car-brake" name="services[]" value="2">
+                <label for="car-brake">Car Brake ($30)</label>
+            </div>
+            <div>
+                <input type="checkbox" class="service" data-price="20" id="change-wheels" name="services[]" value="3">
+                <label for="change-wheels">Change Wheels ($20)</label>
+            </div>
+            <div>
+                <input type="checkbox" class="service" data-price="25" id="realignment" name="services[]" value="4">
+                <label for="realignment">Realignment ($25)</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="customer-notes">Customer Notes:</label>
+            <textarea id="customer-notes" name="notes" rows="5"></textarea>
+        </div>
+        <button type="submit" id="request-appointment">Request Appointment</button>
+    </form>
+
+            <div id="appointment-summary" class="hidden">
+                <h2>Appointment Summary</h2>
+                <p id="summary-details"></p>
+                <button id="download-summary">Download Summary</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+   <footer>
+        <div class="footer-container">
+            <div class="social-media">
+            <h4>Social Media</h4>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> </a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> </a>
+            <a href="viber://chat" target="_blank"><i class="fab fa-viber"></i> </a>
+            </div>
+
+            <div class="help">
+                <h4>Help</h4>
+                <a href="FAQs.html">FAQs</a>
+            </div>
+            <div class="company">
+                <h4>Company</h4>
+                <a href="aboutus.html">About Us</a>
+            </div>
+            <div class="subscribe">
+                <h4>Subscribe to the KCS Newsletter</h4>
+                <form id="subscribe-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+     <!-- Login/Register Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login or Register</h2>
+            <form id="login-form">
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="register-link">Register here</a></p>
+        </div>
+    </div>
+</body>
+</html>
